@@ -35,12 +35,16 @@ const About = () => {
                   style={{ animationDuration: '3s' }}></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl">👨‍💻</div>
+                <img
+                  src="/assets/usman-logo.png"
+                  alt="Usman Qasim"
+                  className="w-20 h-20 rounded-full border-2 border-white/30"
+                />
               </div>
             </div>
 
             <div>
-              <p className="grid-headtext">Hi, I&apos;m Muhammad Usman</p>
+              <p className="grid-headtext">Hi, I&apos;m Usman Qasim</p>
               <p className="grid-subtext">
                 With 5 years of experience in MERN and MEAN stacks, I specialize in building scalable, high-performance
                 web applications using modern technologies like Next.js, React, Angular, NestJS, and microservices.

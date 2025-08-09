@@ -23,7 +23,7 @@ const About = () => {
             <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
 
             <div>
-              <p className="grid-headtext">Hi, I'm Muhammad Usman</p>
+              <p className="grid-headtext">Hi, I'm Usman Qasim</p>
               <p className="grid-subtext">
                 With 5 years of experience in MERN and MEAN stacks, I specialize in building scalable, high-performance
                 web applications using modern technologies like Next.js, React, Angular, NestJS, and microservices.

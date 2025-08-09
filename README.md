@@ -1,4 +1,4 @@
-# Muhammad Usman - Portfolio
+# Usman Qasim- Portfolio
 
 A modern, interactive portfolio website built with React, Three.js, and Tailwind CSS showcasing my skills as a Full Stack Engineer.
 
@@ -14,7 +14,7 @@ A modern, interactive portfolio website built with React, Three.js, and Tailwind
 
 ## About Me
 
-I am Muhammad Usman, a highly skilled Full Stack Engineer with 5 years of experience specializing in MERN and MEAN stacks. Currently working as a Senior MERN Stack Developer at Code Upscale, I build robust and efficient solutions for complex business challenges.
+I am Usman Qasim, a highly skilled Full Stack Engineer with 5 years of experience specializing in MERN and MEAN stacks. Currently working as a Senior MERN Stack Developer at Code Upscale, I build robust and efficient solutions for complex business challenges.
 
 ### Skills
 
@@ -87,4 +87,4 @@ To enable the contact form:
 
 ## License
 
-© 2024 Muhammad Usman. All rights reserved.
+© 2025 Usman Qasim. All rights reserved.

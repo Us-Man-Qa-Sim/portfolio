@@ -37,7 +37,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
       Object.values(actions).forEach((action) => action.stop());
       // Play the new animation
       actions[animationName].reset().fadeIn(0.5).play();
-      
+
       return () => {
         if (actions[animationName]) {
           actions[animationName].fadeOut(0.5);

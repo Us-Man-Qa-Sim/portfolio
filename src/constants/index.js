@@ -75,22 +75,59 @@ export const myProjects = [
       {
         id: 1,
         name: 'Angular',
-        path: '/assets/react.svg',
+        path: '/assets/angular-svgrepo-com.svg',
       },
       {
         id: 2,
         name: 'NestJS',
-        path: 'assets/tailwindcss.png',
+        path: '/assets/nestjs-svgrepo-com.svg',
       },
       {
         id: 3,
-        name: 'PostgreSQL',
-        path: '/assets/typescript.png',
+        name: 'Redis',
+        path: '/assets/redis-logo-svgrepo-com.svg',
       },
       {
         id: 4,
-        name: 'AI Powered',
-        path: '/assets/framer.png',
+        name: 'MongoDB',
+        path: '/assets/mongodb-svgrepo-com.svg',
+      },
+    ],
+  },
+  {
+    title: 'Ilgos - eCommerce Platform',
+    desc: 'Ilgos is a scalable eCommerce platform built with modern technologies. I led the development and optimization of this platform, implementing complex features like Unit of Measurement management and handling migration of hundreds of thousands of records from legacy systems.',
+    subdesc:
+      'Built with Next.js, NestJS, Redux, Material-UI, MySQL, and TypeORM in a monorepo architecture. Integrated Bull Queue, Redis, and Socket.IO for real-time batch processing and migration progress tracking.',
+    href: 'https://ilgos-marketplace.cloudupscale.com/',
+    texture: '/textures/project/project2.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Next.js',
+        path: '/assets/nextjs-svgrepo-com (1).svg',
+      },
+      {
+        id: 2,
+        name: 'NestJS',
+        path: '/assets/nestjs-svgrepo-com.svg',
+      },
+      {
+        id: 3,
+        name: 'Redis',
+        path: '/assets/redis-logo-svgrepo-com.svg',
+      },
+      {
+        id: 4,
+        name: 'Stripe',
+        path: '/assets/stripe-svgrepo-com.svg',
       },
     ],
   },
@@ -99,9 +136,9 @@ export const myProjects = [
     desc: 'Brilliant Move is a comprehensive logistics platform based in the United States that enables consumers and businesses to easily transport logistics throughout the country. Features include real-time tracking and integrated payment systems.',
     subdesc:
       'Built with React.js and integrated with Google Maps API for navigation and tracking. Implemented Stripe payment gateway for secure transactions and real-time logistics management.',
-    href: 'https://github.com/usman-qasim',
+    href: 'https://mybrilliantmove.com/',
     texture: '/textures/project/project3.mp4',
-    logo: '/assets/project-logo3.png',
+    logo: '/assets/brillent-move.png',
     logoStyle: {
       backgroundColor: '#60f5a1',
       background:
@@ -118,18 +155,18 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'Google Maps',
-        path: 'assets/tailwindcss.png',
+        name: 'Stripe',
+        path: '/assets/stripe-svgrepo-com.svg',
       },
       {
         id: 3,
-        name: 'Stripe',
-        path: '/assets/typescript.png',
+        name: 'Google Maps',
+        path: '/assets/map-pin-alt-svgrepo-com.svg',
       },
       {
         id: 4,
-        name: 'Node.js',
-        path: '/assets/framer.png',
+        name: 'Bootstrap',
+        path: '/assets/bootstrap-svgrepo-com.svg',
       },
     ],
   },
@@ -138,7 +175,7 @@ export const myProjects = [
     desc: 'Taxeezy is a comprehensive tax management application that I led from end-to-end design to development. The platform features real-time chat systems, scalable APIs, and secure authentication for streamlined tax management processes.',
     subdesc:
       'Built with Next.js and Node.js backend, MongoDB for data storage. Implemented real-time chat using Socket.IO, created reliable RESTful APIs, and integrated JWT authentication for secure user management.',
-    href: 'https://github.com/usman-qasim',
+    href: 'https://taxeezy.co.uk/',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -151,22 +188,22 @@ export const myProjects = [
       {
         id: 1,
         name: 'Next.js',
-        path: '/assets/react.svg',
+        path: '/assets/nextjs-svgrepo-com (1).svg',
       },
       {
         id: 2,
-        name: 'Node.js',
-        path: 'assets/tailwindcss.png',
+        name: 'Stripe',
+        path: '/assets/stripe-svgrepo-com.svg',
       },
       {
         id: 3,
-        name: 'MongoDB',
-        path: '/assets/typescript.png',
+        name: 'Material-UI',
+        path: '/assets/material-ui-svgrepo-com.svg',
       },
       {
         id: 4,
-        name: 'Socket.IO',
-        path: '/assets/framer.png',
+        name: 'MongoDB',
+        path: '/assets/mongodb-svgrepo-com.svg',
       },
     ],
   },
@@ -175,7 +212,7 @@ export const myProjects = [
     desc: 'EMI Portal is an all-in-one administration system for EMI Fusion featuring sprint-based project and task management. The system includes comprehensive employee management with role-based access control and efficient workflow management.',
     subdesc:
       'Developed using React.js frontend with Node.js backend and PostgreSQL database. Implemented sprint-based project management, role-based access control (RBAC), and comprehensive task tracking systems.',
-    href: 'https://github.com/usman-qasim',
+    href: '',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
     logoStyle: {
@@ -227,7 +264,7 @@ export const workExperiences = [
     pos: 'Senior MERN Stack Developer',
     duration: 'Sep 2024 - Present',
     title: "Leading development of Ilgos eCommerce platform using Next.js, NestJS, and microservices. Specializing in performance optimization, data migration, and implementing complex features like UOM management.",
-    icon: '/assets/framer.svg',
+    icon: '/assets/codeupscale.svg',
     animation: 'victory',
   },
   {
@@ -236,7 +273,7 @@ export const workExperiences = [
     pos: 'MEAN Stack Engineer',
     duration: 'Mar 2023 - Sep 2024',
     title: "Developed large-scale data-driven platforms using Angular, NestJS, and microservices. Implemented real-time features with Socket.IO and optimized performance using Elasticsearch and Redis.",
-    icon: '/assets/figma.svg',
+    icon: '/assets/focusteck.svg',
     animation: 'clapping',
   },
   {
@@ -245,7 +282,7 @@ export const workExperiences = [
     pos: 'MERN Stack Engineer',
     duration: 'Sep 2020 - Jan 2023',
     title: "Built IoT device admin panels using MQTT protocol, developed RESTful APIs with MongoDB and PostgreSQL, and implemented role-based access control systems for project management.",
-    icon: '/assets/notion.svg',
+    icon: '/assets/emi_fusion_logo.jpeg',
     animation: 'salute',
   },
 ];
