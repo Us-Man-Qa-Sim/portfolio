@@ -32,7 +32,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <p className="text-white-500">© 2025 Usman Qasim. All rights reserved.</p>
+      <p className="text-white-500">© 2026 Usman Qasim. All rights reserved.</p>
     </footer>
   );
 };
