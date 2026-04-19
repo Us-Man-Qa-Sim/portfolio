@@ -58,12 +58,49 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: 'DoctorNow - Post-Acute EHR Platform',
+    desc: 'DoctorNow is a Post-Acute EHR (Electronic Health Record) platform streamlining clinical workflows, patient charting, and care management. Built with Angular, Express.js, and MongoDB with multiple third-party integrations.',
+    subdesc:
+      'Led a team of 2 developers, improving application security and safeguarding sensitive healthcare data. Delivered performance optimizations, backend query improvements, error handling, third-party API integrations, and ongoing feature enhancements across the full stack in a live production environment.',
+    href: 'https://docnow.ai/',
+    texture: '/textures/project/docnow.mp4',
+    logo: '/assets/doctornow.svg',
+    logoStyle: {
+      backgroundColor: '#0a1628',
+      border: '0.2px solid #1a3a5c',
+      boxShadow: '0px 0px 60px 0px #1E6FBF4D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Angular',
+        path: '/assets/angular-svgrepo-com.svg',
+      },
+      {
+        id: 2,
+        name: 'ExpressJS',
+        path: '/assets/express-js.png',
+      },
+      {
+        id: 3,
+        name: 'MongoDB',
+        path: '/assets/mongodb-svgrepo-com.svg',
+      },
+      {
+        id: 4,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+    ],
+  },
+  {
     title: 'Ideawake - Idea Management Platform',
     desc: 'Ideawake is a shockingly simple idea management platform proven to transform ideas into impact. We help companies double the ROI they\'re achieving from crowdsourcing ideas while cutting management time in half.',
     subdesc:
       'An easy-to-use, highly configurable platform that captures, evaluates, and implements ideas from employees, customers, and partners. Features include AI-powered insights, collaborative workflows, real-time analytics, and gamification to achieve 50-80% participation rates.',
     href: 'https://ideawake.com/',
-    texture: '/textures/project/project1.mp4',
+    texture: '/textures/project/ideawake.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -100,7 +137,7 @@ export const myProjects = [
     subdesc:
       'Built with Next.js, NestJS, Redux, Material-UI, MySQL, and TypeORM in a monorepo architecture. Integrated Bull Queue, Redis, and Socket.IO for real-time batch processing and migration progress tracking.',
     href: 'https://ilgos-marketplace.cloudupscale.com/',
-    texture: '/textures/project/project2.mp4',
+    texture: '/textures/project/ilgos.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
       backgroundColor: '#2A1816',
@@ -137,7 +174,7 @@ export const myProjects = [
     subdesc:
       'Built with React.js and integrated with Google Maps API for navigation and tracking. Implemented Stripe payment gateway for secure transactions and real-time logistics management.',
     href: 'https://mybrilliantmove.com/',
-    texture: '/textures/project/project3.mp4',
+    texture: '/textures/project/brillentmove.mp4',
     logo: '/assets/brillent-move.png',
     logoStyle: {
       backgroundColor: '#60f5a1',
@@ -176,7 +213,7 @@ export const myProjects = [
     subdesc:
       'Built with Next.js and Node.js backend, MongoDB for data storage. Implemented real-time chat using Socket.IO, created reliable RESTful APIs, and integrated JWT authentication for secure user management.',
     href: 'https://taxeezy.co.uk/',
-    texture: '/textures/project/project4.mp4',
+    texture: '/textures/project/taxeezy.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
       backgroundColor: '#0E1F38',
@@ -213,7 +250,7 @@ export const myProjects = [
     subdesc:
       'Developed using React.js frontend with Node.js backend and PostgreSQL database. Implemented sprint-based project management, role-based access control (RBAC), and comprehensive task tracking systems.',
     href: '',
-    texture: '/textures/project/project5.mp4',
+    texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo5.png',
     logoStyle: {
       backgroundColor: '#1C1A43',
@@ -260,15 +297,24 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Code UpScale',
-    pos: 'Senior MERN Stack Developer',
-    duration: 'Sep 2024 - Present',
-    title: "Leading development of Ilgos eCommerce platform using Next.js, NestJS, and microservices. Specializing in performance optimization, data migration, and implementing complex features like UOM management.",
-    icon: '/assets/codeupscale.svg',
+    name: 'DoctorNow',
+    pos: 'Senior MEAN Stack Developer',
+    duration: 'Jan 2026 - Present',
+    title: "Leading development of a Post-Acute EHR platform, improving application security, system reliability, and performance. Managing a team of 2 developers while delivering feature enhancements and resolving production issues across the full stack.",
+    icon: '/assets/doctornow.svg',
     animation: 'victory',
   },
   {
     id: 2,
+    name: 'Code UpScale',
+    pos: 'Senior MERN Stack Developer',
+    duration: 'Sep 2024 - Dec 2024',
+    title: "Leading development of Ilgos eCommerce platform using Next.js, NestJS, and microservices. Specializing in performance optimization, data migration, and implementing complex features like UOM management.",
+    icon: '/assets/codeupscale.svg',
+    animation: 'clapping',
+  },
+  {
+    id: 3,
     name: 'Focusteck',
     pos: 'MEAN Stack Engineer',
     duration: 'Mar 2023 - Sep 2024',
@@ -277,7 +323,7 @@ export const workExperiences = [
     animation: 'clapping',
   },
   {
-    id: 3,
+    id: 4,
     name: 'EMI Fusion',
     pos: 'MERN Stack Engineer',
     duration: 'Sep 2020 - Jan 2023',
