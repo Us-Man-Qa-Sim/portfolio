@@ -1,6 +1,7 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { useMediaQuery } from 'react-responsive';
 
 import Developer from '../components/Developer.jsx';
 import CanvasLoader from '../components/Loading.jsx';
@@ -9,6 +10,24 @@ import { workExperiences } from '../constants/index.js';
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState('idle');
+  const [canvasVisible, setCanvasVisible] = useState(false);
+  const canvasContainerRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  useEffect(() => {
+    if (isMobile) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCanvasVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+    if (canvasContainerRef.current) observer.observe(canvasContainerRef.current);
+    return () => observer.disconnect();
+  }, [isMobile]);
 
   return (
     <section className="c-space my-20" id="work">
@@ -16,19 +35,21 @@ const WorkExperience = () => {
         <p className="head-text">My Work Experience</p>
 
         <div className="work-container">
-          <div className="work-canvas">
-            <ErrorBoundary>
-              <Canvas>
-                <ambientLight intensity={7} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                <directionalLight position={[10, 10, 10]} intensity={1} />
-                <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+          <div ref={canvasContainerRef} className="work-canvas">
+            {!isMobile && canvasVisible && (
+              <ErrorBoundary>
+                <Canvas>
+                  <ambientLight intensity={7} />
+                  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                  <directionalLight position={[10, 10, 10]} intensity={1} />
+                  <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
-                <Suspense fallback={<CanvasLoader />}>
-                  <Developer position-y={-3} scale={3} animationName={animationName} />
-                </Suspense>
-              </Canvas>
-            </ErrorBoundary>
+                  <Suspense fallback={<CanvasLoader />}>
+                    <Developer position-y={-3} scale={3} animationName={animationName} />
+                  </Suspense>
+                </Canvas>
+              </ErrorBoundary>
+            )}
           </div>
 
           <div className="work-content">

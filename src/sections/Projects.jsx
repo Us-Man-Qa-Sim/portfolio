@@ -1,8 +1,9 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
+import { useMediaQuery } from 'react-responsive';
 
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
@@ -12,6 +13,24 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const [canvasVisible, setCanvasVisible] = useState(false);
+  const canvasContainerRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  useEffect(() => {
+    if (isMobile) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCanvasVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+    if (canvasContainerRef.current) observer.observe(canvasContainerRef.current);
+    return () => observer.disconnect();
+  }, [isMobile]);
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -80,19 +99,31 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
-            <ambientLight intensity={Math.PI} />
-            <directionalLight position={[10, 10, 5]} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-          </Canvas>
+        <div ref={canvasContainerRef} className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+          {isMobile ? (
+            <video
+              key={currentProject.texture}
+              src={currentProject.texture}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover rounded-lg"
+            />
+          ) : canvasVisible ? (
+            <Canvas>
+              <ambientLight intensity={Math.PI} />
+              <directionalLight position={[10, 10, 5]} />
+              <Center>
+                <Suspense fallback={<CanvasLoader />}>
+                  <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                    <DemoComputer texture={currentProject.texture} />
+                  </group>
+                </Suspense>
+              </Center>
+              <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+            </Canvas>
+          ) : null}
         </div>
       </div>
     </section>

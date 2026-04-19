@@ -27,7 +27,7 @@ const Navbar = () => {
           <a
             href="/"
             className="text-neutral-400 font-bold text-xl hover:text-white transition-colors flex items-center gap-3">
-            <img src="/assets/usman-logo.png" alt="Usman Qasim" className="w-8 h-8 rounded-full" />
+            <img src="/assets/usman-logo.webp" alt="Usman Qasim" className="w-8 h-8 rounded-full" />
             Usman Qasim
           </a>
 

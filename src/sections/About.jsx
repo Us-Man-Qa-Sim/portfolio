@@ -1,10 +1,27 @@
-import { useState } from 'react';
-import Globe from 'react-globe.gl';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 
 import Button from '../components/Button.jsx';
 
+const Globe = lazy(() => import('react-globe.gl'));
+
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const [globeVisible, setGlobeVisible] = useState(false);
+  const globeContainerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setGlobeVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+    if (globeContainerRef.current) observer.observe(globeContainerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const handleCopy = () => {
     navigator.clipboard.writeText('usmanqasim0900@gmail.com');
@@ -36,7 +53,7 @@ const About = () => {
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="/assets/usman-logo.png"
+                  src="/assets/usman-logo.webp"
                   alt="Usman Qasim"
                   className="w-20 h-20 rounded-full border-2 border-white/30"
                 />
@@ -85,18 +102,22 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 31.5204, lng: 74.3587, text: 'Lahore, Pakistan', color: 'white', size: 15 }]}
-              />
+            <div ref={globeContainerRef} className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+              {globeVisible && (
+                <Suspense fallback={<div className="w-[326px] h-[326px] rounded-full bg-gradient-to-br from-blue-900 to-indigo-900 animate-pulse" />}>
+                  <Globe
+                    height={326}
+                    width={326}
+                    backgroundColor="rgba(0, 0, 0, 0)"
+                    backgroundImageOpacity={0.5}
+                    showAtmosphere
+                    showGraticules
+                    globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                    bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                    labelsData={[{ lat: 31.5204, lng: 74.3587, text: 'Lahore, Pakistan', color: 'white', size: 15 }]}
+                  />
+                </Suspense>
+              )}
             </div>
             <div>
               <p className="grid-headtext">I&apos;m very flexible with time zone communications & locations</p>

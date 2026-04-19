@@ -1,23 +1,25 @@
-import Hero from './sections/Hero.jsx';
-import About from './sections/About.jsx';
-import Footer from './sections/Footer.jsx';
+import { lazy, Suspense } from 'react';
 import Navbar from './sections/Navbar.jsx';
-import Contact from './sections/Contact.jsx';
-import Clients from './sections/Clients.jsx';
-import Projects from './sections/Projects.jsx';
-import WorkExperience from './sections/Experience.jsx';
+
+const Hero = lazy(() => import('./sections/Hero.jsx'));
+const About = lazy(() => import('./sections/About.jsx'));
+const Projects = lazy(() => import('./sections/Projects.jsx'));
+const WorkExperience = lazy(() => import('./sections/Experience.jsx'));
+const Contact = lazy(() => import('./sections/Contact.jsx'));
+const Footer = lazy(() => import('./sections/Footer.jsx'));
 
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto relative">
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      {/* <Clients /> */}
-      <WorkExperience />
-      <Contact />
-      <Footer />
+      <Suspense fallback={null}>
+        <Hero />
+        <About />
+        <Projects />
+        <WorkExperience />
+        <Contact />
+        <Footer />
+      </Suspense>
     </main>
   );
 };
